@@ -1,2 +1,3 @@
-# pokedex
-Creating a quick pokedex using react and the Pokemon API
+# Pokedex
+
+Creating a quick pokedex using [React](https://reactjs.org/) and [Pokémon API](https://pokeapi.co/)
