@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './styles/App.scss';
 
 import PokeList from './components/PokeList';
+import DetailView from './components/DetailView';
 
 class App extends Component {
   state = {
-    pokemon: false,
+    pokemon: null,
+    pokemonList: null,
     search: ""
   }
 
@@ -23,7 +25,7 @@ class App extends Component {
       .then( res => res.json())
       .then( data => {
         this.setState({
-          pokemon: data
+          pokemonList: data.results
         })
       })
   }
@@ -31,9 +33,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input onChange={this.searchPokemon}/>
-        <PokeList pokemon={this.state.pokemon} find={this.state.search}/>
-  
+        {/* <input onChange={this.searchPokemon}/> */}
+        <PokeList pokemon={this.state.pokemonList} find={this.state.search}/>
+        <DetailView pokemon={this.state.pokemon}/>
       </div>
     );
   }

@@ -7,12 +7,12 @@ const PokeList = ({pokemon, find}) => {
     <section className="poke__list">
       { 
         find
-          ? find.map(each => {
-            return <PokeCell name={each.name} />
+          ? find.map( (each, index) => {
+            return <PokeCell name={each.name} key={index}/>
           })
           : pokemon 
-            ? pokemon.results.map( each => {
-              return <PokeCell name={each.name} />
+            ? pokemon.map( (each, index) => {
+              return <PokeCell name={each.name} key={index}/>
             })
             : <h1>Loading...</h1>
       }

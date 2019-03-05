@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const PokeCell = ({name}) => {
-  return <button className="poke-cell">{name}
+  return <button className="poke__cell">{name}
   </button>
 };
 
